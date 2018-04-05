@@ -10,7 +10,7 @@ I wanted to create a simple-to-play trivia game that focuses on one of my favori
 
 # Prototype Main Interface
 ---
-![alt text](https://i.imgur.com/zfpSiPY.png)
+![alt text](https://i.imgur.com/iFnDdba.png)
 
 # Technologies Used
 ---
