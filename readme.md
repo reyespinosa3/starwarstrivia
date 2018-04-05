@@ -34,15 +34,28 @@ Jose, who is in his 30's and loves watching movies of all genres and has an inte
 # MVP User Stories
 ---
 As A User-
+
+
   *I should be able to select a difficulty level
+
+
   *I should be able to see an image
+
+
   *I should be able to select an answer from the options given or provide my own
+
+
   *I should be able to see what the correct answer when I'm wrong
+
+
   *I should be able to see my progression from Padiwan to Jedi Master
 
 # Stretch Goals User Stories
 ---
 As A User-
+
   *I should get a visual "congratulations" for a correct answer
+
   *I should see my score increase for each correct answer
+
   *I should be able to choose to be a Jedi or Sith
