@@ -1,8 +1,12 @@
-
+body {
+  background-image: url("https://i.imgur.com/ciPJv6g.png");
+}
 h1 {
   color: red;
   text-align: center;
-  border: 1px double red;
+  border: 1px solid red;
+  margin-top: 2px;
+  margin-bottom: 2px;
 }
 h4 {
   color: blue;
@@ -11,4 +15,73 @@ h4 {
 h3 {
   color: blue;
   text-align: center;
+}
+p {
+  color: blue;
+  text-align: center;
+  font-size: 24px;
+  margin: 1px 1px;
+}
+div {
+  border-bottom-style: double;
+  height: 100px;
+}
+#masterJedi {
+  height: 100px;
+  width: 100px;
+  margin-left: 20%;
+}
+#trainingJedi {
+  height: 100px;
+  width: 100px;
+  margin-left: 20%;
+}
+#padawan {
+  height: 100px;
+  width: 100px;
+  margin-left: 5%;
+}
+#myProgress {
+  height: 10px;
+  background-color: grey;
+}
+#myBar {
+  width: 1%;
+  background-color: green;
+  height: 10px;
+}
+#difficulty {
+  height: 20px;
+  margin-bottom: 15px;
+}
+.difficulty {
+  margin-left: 25%;
+  width: 50%;
+}
+#startGame {
+  width: 50%;
+  margin-left: 25%
+}
+#question {
+  height: 200px;
+}
+.answer {
+  margin-left: 25%;
+  width: 50%;
+}
+#starwarscharacter {
+  height: 150px;
+  width: 150px;
+  margin-left: 40%;
+}
+.answer {
+  display: list-item;
+  position: relative;
+}
+#buttons {
+  height: 60px;
+}
+#text {
+  margin-left: 25%;
+  width: 50%;
 }
