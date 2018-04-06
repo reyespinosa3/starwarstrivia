@@ -22,24 +22,24 @@ p {
   font-size: 24px;
   margin: 1px 1px;
 }
-div {
+#images {
   border-bottom-style: double;
   height: 100px;
+  position: relative;
+  display: flex;
+  justify-content:space-between;
 }
 #masterJedi {
   height: 100px;
   width: 100px;
-  margin-left: 20%;
 }
 #trainingJedi {
   height: 100px;
   width: 100px;
-  margin-left: 20%;
 }
 #padawan {
   height: 100px;
   width: 100px;
-  margin-left: 5%;
 }
 #myProgress {
   height: 10px;
@@ -51,32 +51,37 @@ div {
   height: 10px;
 }
 #difficulty {
-  height: 20px;
+  height: 25px;
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }
 .difficulty {
-  margin-left: 25%;
-  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 #startGame {
   width: 50%;
-  margin-left: 25%
+  height: 20px;
 }
 #question {
-  height: 200px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
 }
 .answer {
   margin-left: 25%;
   width: 50%;
+  display: list-item;
+  position: relative;
+}
+#picutre{
+  display:flex;
+  justify-content:center;
 }
 #starwarscharacter {
   height: 150px;
   width: 150px;
-  margin-left: 40%;
-}
-.answer {
-  display: list-item;
-  position: relative;
 }
 #buttons {
   height: 60px;
