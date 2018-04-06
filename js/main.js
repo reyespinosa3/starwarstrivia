@@ -6,11 +6,11 @@ console.log("Up and Running");
 // create logic for next question button
 
 let questions = [
-  {"ans":"Princess Leia", "alt":"Queen Amidala", "alt1":"Your Mom"},
-  {"ans":"Han Solo", "alt":"Boba Fett", "alt1":"Luke Skywalker"},
-  {"ans":"Chewbacca", "alt":"Ewok", "alt1":"Jabba Hutt"},
-  {"ans":"Jabba Hutt", "alt":"The Blob", "alt1":"Slimer"},
-  {"ans":"R2-D2", "alt":"C3-PO", "alt1":"BB-12"}
+  {"corans":"Princess Leia", "ans":"Queen Amidala", "ans1":"Princess Leia", "ans2":"Your Mom"},
+  {"corans":"Han Solo", "ans":"Han Solo", "ans1":"Boba Fett", "ans2":"Luke Skywalker"},
+  {"corans":"Chewbacca", "ans":"Chewbacca", "ans1":"Ewok", "ans2":"Jabba Hutt"},
+  {"corans":"Jabba Hutt", "ans":"Jabba Hutt", "ans1":"The Blob", "ans2":"Slimer"},
+  {"corans":"R2-D2", "ans":"R2-D2", "ans1":"C3-PO", "ans2":"BB-12"}
 ];
 
 const charPics = [
@@ -21,27 +21,39 @@ const charPics = [
   "images/characters/r2d2.png"
 ]
 
-const startGame = function() {
-  let i=0;
+let i=0;
+
+const loadQuestions = function() {
   $('#starwarscharacter').attr("src", charPics[i]);
   $('#answer1').text(questions[i].ans);
-  $('#answer2').text(questions[i].alt);
-  $('#answer3').text(questions[i].alt1);
+  $('#answer2').text(questions[i].ans1);
+  $('#answer3').text(questions[i].ans2);
   $('.answer').on('click', function(e) {
       e.preventDefault();
       if (event.target.id === "answer1") {
-        if ($('#answer1').text() === questions[i].ans) {
+        if ($('#answer1').text() === questions[i].corans) {
           alert("You got it right!");
         } else {
           alert("Sorry, please click Next button.")
         }
-        // console.log("answer 1 button clicked");
-        // let temp = $('#answer1').text();
-        // console.log(temp);
       } else if (event.target.id === "answer2") {
           console.log("answer 2 button clicked");
+          if ($('#answer2').text() === questions[i].corans) {
+            alert("You got it right!");
+          } else {
+            alert("Sorry, please click Next button.")
+          }
         } else if (event.target.id === "answer3") {
           console.log("answer 3 button clicked");
+          if ($('#answer3').text() === questions[i].corans) {
+            alert("You got it right!");
+          } else {
+            alert("Sorry, please click Next button.")
+          }
+        } else if (event.target.id === "nextQuestion") {
+          i += 1;
+          console.log("next question button clicked");
+          loadQuestions();
         }
       });
   };
@@ -51,5 +63,5 @@ $('#startGame').on('click', function(e) {
   console.log("Game Starts");
   $('#trainingJedi').hide();
   $('#masterJedi').hide();
-  startGame();
+  loadQuestions();
   });
