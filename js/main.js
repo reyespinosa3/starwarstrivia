@@ -5,16 +5,6 @@ console.log("Up and Running");
 // create logic to update progess bar
 // create logic for next question button
 
-const questions = [
-  {"ans":"Queen Amidala", "ans1":"Princess Leia", "ans2":"Your Mom"},
-  {"ans":"Han Solo", "ans1":"Boba Fett", "ans2":"Luke Skywalker"},
-  {"ans":"Chewbacca", "ans1":"Ewok", "ans2":"Jabba Hutt"},
-  {"ans":"Jabba Hutt", "ans1":"The Blob", "ans2":"Slimer"},
-  {"ans":"Teddy Bear", "ans1":"Wookie", "ans2":"Ewok"},
-  {"ans":"Darth Maul", "ans1":"Darth Vader", "ans2":"Darth Sidious"},
-  // {"ans":"R2-D2", "ans1":"C3-PO", "ans2":"BB-12"}
-];
-
 const answers = [
   "Princess Leia",
   "Han Solo",
@@ -47,12 +37,26 @@ let aOne = $('#answer1');
 let aTwo = $('#answer2');
 let aThree = $('#answer3');
 let correct = 0;
+let level = 0;
 
 const loadButtons = function() {
   $('#starwarscharacter').attr("src", charPics[i]);
   $(aOne).removeClass("hidden");
   $(aTwo).removeClass("hidden");
   $(aThree).removeClass("hidden");
+  checkProgress();
+}
+
+const checkProgress = function() {
+  if (correct == 10) {
+    $('#masterJedi').show();
+    $('#myBar').attr("style", "width:100%");
+  } else if (correct == 5) {
+    $('#trainingJedi').show();
+  } else {
+    let prog = level + "%";
+    $('#myBar').attr("style", "width:"+prog);
+  }
   checkAnswers();
 }
 
@@ -73,12 +77,11 @@ const updateButtons = function() {
 const checkAnswers = function() {
   $(aOne).on('click', function(e) {
     if (aOne.text() === answers[i]) {
-      console.log("Correct");
       i += 1;
       correct++;
+      level += 10;
       updateButtons();
     } else {
-      console.log("Wrong");
       i += 1;
       updateButtons();
     }
@@ -86,12 +89,11 @@ const checkAnswers = function() {
 
   $(aTwo).on('click', function(e) {
     if (aTwo.text() === answers[i]) {
-      console.log("Correct");
       i += 1;
       correct++;
+      level += 10;
       updateButtons();
     } else {
-      console.log("Nope");
       i += 1;
       updateButtons();
     }
@@ -99,12 +101,11 @@ const checkAnswers = function() {
 
   $(aThree).on('click', function(e) {
     if (aThree.text() === answers[i]) {
-      console.log("Correct");
       i += 1;
       correct++;
+      level += 10;
       updateButtons();
     } else {
-      console.log("Sorry Charlie");
       i += 1;
       updateButtons();
     }
@@ -112,7 +113,6 @@ const checkAnswers = function() {
 }
 
 $('#startGame').on('click', function(e) {
-  console.log("Game Starts");
   $('#trainingJedi').hide();
   $('#masterJedi').hide();
   loadButtons();
