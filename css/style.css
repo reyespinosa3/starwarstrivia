@@ -46,7 +46,7 @@ p {
   background-color: grey;
 }
 #myBar {
-  width: 1%;
+  width: 0%;
   background-color: green;
   height: 10px;
 }
@@ -89,4 +89,7 @@ p {
 #text {
   margin-left: 25%;
   width: 50%;
+}
+.hidden {
+  display: none;
 }
