@@ -1,6 +1,6 @@
 body {
   background-image: url("https://i.imgur.com/ciPJv6g.png");
-  /* background-image:url("https://media.giphy.com/media/3o7buijTqhjxjbEqjK/giphy.gif"); */
+  /* background-image:url("https://media.giphy.com/media/xUPGcfzaX9hFFQJYre/giphy.gif"); */
 }
 h1 {
   color: red;
@@ -9,11 +9,7 @@ h1 {
   margin-top: 2px;
   margin-bottom: 2px;
 }
-h4 {
-  color: blue;
-  text-align: center;
-}
-h3 {
+h2 {
   color: blue;
   text-align: center;
 }
@@ -48,7 +44,7 @@ p {
 }
 #myBar {
   width: 0%;
-  background-color: green;
+  background-color: lightgreen;
   height: 10px;
 }
 #difficulty {
@@ -61,23 +57,24 @@ p {
   display: flex;
   justify-content: center;
 }
-#startGame {
+#startGame, #contTraining {
   width: 50%;
-  height: 20px;
+  font-size: 20px;
+  height: 30px;
 }
 #question {
-  height: 20px;
+  height: 30px;
   display: flex;
   justify-content: center;
 }
 .answer {
-  margin-left: 25%;
-  width: 50%;
+  width: 25%;
+  font-size: 20px;
   display: list-item;
-  position: relative;
+  margin: auto;
 }
-#picutre{
-  display:flex;
+#picutre {
+  display: flex;
   justify-content:center;
 }
 #starwarscharacter {
@@ -85,7 +82,8 @@ p {
   width: 150px;
 }
 #buttons {
-  height: 60px;
+  height: 90px;
+  /* margin: auto; */
 }
 #text {
   margin-left: 25%;
@@ -93,4 +91,9 @@ p {
 }
 .hidden {
   display: none;
+}
+.gifs {
+  height: 250px;
+  width: 250px;
+  margin-top: -250px;
 }

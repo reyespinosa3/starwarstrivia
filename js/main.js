@@ -39,6 +39,13 @@ let aThree = $('#answer3');
 let correct = 0;
 let level = 0;
 
+const endGame = function() {
+    $('#starwarscharacter').addClass("hidden");
+    $('#yodadance').addClass("hidden");
+    $('#darthdance').removeClass("hidden");
+    $('#who').text("You Are A Jedi Master!");
+}
+
 const loadButtons = function() {
   $('#starwarscharacter').attr("src", charPics[i]);
   $(aOne).removeClass("hidden");
@@ -49,10 +56,15 @@ const loadButtons = function() {
 
 const checkProgress = function() {
   if (correct == 10) {
+    $('#currentLevel').attr("style", "color:yellow");
     $('#masterJedi').show();
     $('#myBar').attr("style", "width:100%");
+    $('#level').text("Jedi Master");
+    endGame();
   } else if (correct == 5) {
+    $('#currentLevel').attr("style", "color:blue");
     $('#trainingJedi').show();
+    $('#level').text("Jedi In Training");
   } else {
     let prog = level + "%";
     $('#myBar').attr("style", "width:"+prog);
@@ -74,16 +86,23 @@ const updateButtons = function() {
   loadButtons();
 }
 
+const nextCharacter = function() {
+  $('#contTraining').text("Correct Answer was " + answers[i-1]);
+  updateButtons();
+}
+
 const checkAnswers = function() {
   $(aOne).on('click', function(e) {
     if (aOne.text() === answers[i]) {
       i += 1;
       correct++;
       level += 10;
-      updateButtons();
+      rightAnswer();
+      nextCharacter();
     } else {
       i += 1;
-      updateButtons();
+      wrongAnswer();
+      nextCharacter();
     }
   });
 
@@ -92,10 +111,12 @@ const checkAnswers = function() {
       i += 1;
       correct++;
       level += 10;
-      updateButtons();
+      rightAnswer();
+      nextCharacter();
     } else {
       i += 1;
-      updateButtons();
+      wrongAnswer();
+      nextCharacter();
     }
   });
 
@@ -104,16 +125,34 @@ const checkAnswers = function() {
       i += 1;
       correct++;
       level += 10;
-      updateButtons();
+      rightAnswer();
+      nextCharacter();
     } else {
       i += 1;
-      updateButtons();
+      wrongAnswer();
+      nextCharacter();
     }
   });
+}
+const rightAnswer = function() {
+  $('#failure').addClass("hidden");
+  $('#hellothere').addClass("hidden");
+  $('#yodadance').removeClass("hidden");
+}
+
+const wrongAnswer = function() {
+  $('#hellothere').addClass("hidden");
+  $('#yodadance').addClass("hidden");
+  $('#failure').removeClass("hidden");
 }
 
 $('#startGame').on('click', function(e) {
   $('#trainingJedi').hide();
   $('#masterJedi').hide();
+  $('#description').hide();
+  $('#hellothere').removeClass("hidden");
+  $('#begin').text("Continue");
+  $('#startGame').addClass("hidden");
+  $('#contTraining').removeClass("hidden");
   loadButtons();
   })
