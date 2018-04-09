@@ -46,6 +46,7 @@ let level = 0;
 const endGame = function() {
     $('#starwarscharacter').addClass("hidden");
     $('#yodadance').addClass("hidden");
+    $('#failure').addClass("hidden");
     $('#darthdance').removeClass("hidden");
     $('#who').text("You Are A Jedi Master!");
     $(aOne).addClass("hidden");
