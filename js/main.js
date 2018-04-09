@@ -15,7 +15,9 @@ const answers = [
   "R2-D2",
   "Jawa",
   "Darth Vader",
-  "Luke Skywalker"
+  "Luke Skywalker",
+  "Boba Fett",
+  "C-3PO"
 ];
 
 const charPics = [
@@ -28,7 +30,9 @@ const charPics = [
   "images/characters/r2d2.png",
   "images/characters/jawa.png",
   "images/characters/darthvader.png",
-  "images/characters/lukeskywalker.png"
+  "images/characters/lukeskywalker.png",
+  "images/characters/bobafett.png",
+  "images/characters/c3po.png"
 ];
 
 let i=0;
@@ -44,6 +48,9 @@ const endGame = function() {
     $('#yodadance').addClass("hidden");
     $('#darthdance').removeClass("hidden");
     $('#who').text("You Are A Jedi Master!");
+    $(aOne).addClass("hidden");
+    $(aTwo).addClass("hidden");
+    $(aThree).addClass("hidden");
 }
 
 const loadButtons = function() {
@@ -60,16 +67,27 @@ const checkProgress = function() {
     $('#masterJedi').show();
     $('#myBar').attr("style", "width:100%");
     $('#level').text("Jedi Master");
+    new Audio("audio/jedi-know.mp3").play();
     endGame();
   } else if (correct == 5) {
     $('#currentLevel').attr("style", "color:blue");
     $('#trainingJedi').show();
     $('#level').text("Jedi In Training");
+    new Audio("audio/forcestrong.mp3").play();
   } else {
     let prog = level + "%";
     $('#myBar').attr("style", "width:"+prog);
   }
-  checkAnswers();
+  checkEndGame();
+}
+
+const checkEndGame = function() {
+console.log(count);
+  if (count === 40) {
+    endGame();
+  } else {
+    checkAnswers();
+  }
 }
 
 const updateButtons = function() {
@@ -138,12 +156,16 @@ const rightAnswer = function() {
   $('#failure').addClass("hidden");
   $('#hellothere').addClass("hidden");
   $('#yodadance').removeClass("hidden");
+  if (correct === 1 || correct === 4 || correct === 7) {
+    new Audio("audio/yodalaughing.mp3").play();
+  }
 }
 
 const wrongAnswer = function() {
   $('#hellothere').addClass("hidden");
   $('#yodadance').addClass("hidden");
   $('#failure').removeClass("hidden");
+  new Audio("audio/muchfear.mp3").play();
 }
 
 $('#startGame').on('click', function(e) {
@@ -154,5 +176,6 @@ $('#startGame').on('click', function(e) {
   $('#begin').text("Continue");
   $('#startGame').addClass("hidden");
   $('#contTraining').removeClass("hidden");
+  new Audio("audio/meetobiwan.mp3").play();
   loadButtons();
   })

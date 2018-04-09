@@ -1,5 +1,6 @@
 body {
   background-image: url("https://i.imgur.com/ciPJv6g.png");
+  font-family: "starjedi";
   /* background-image:url("https://media.giphy.com/media/xUPGcfzaX9hFFQJYre/giphy.gif"); */
 }
 h1 {
@@ -61,6 +62,7 @@ p {
   width: 50%;
   font-size: 20px;
   height: 30px;
+  font-family: "starjedi";
 }
 #question {
   height: 30px;
@@ -72,6 +74,7 @@ p {
   font-size: 20px;
   display: list-item;
   margin: auto;
+  font-family: "starjedi";
 }
 #picutre {
   display: flex;
@@ -94,6 +97,6 @@ p {
 }
 .gifs {
   height: 250px;
-  width: 250px;
+  width: 300px;
   margin-top: -250px;
 }
