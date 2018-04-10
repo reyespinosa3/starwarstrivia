@@ -5,7 +5,7 @@
 ![alt text](https://i.imgur.com/MB5ZAQG.png)
 # Play The game
 ---
-[www.reystarwarstrivia.surge.sh]
+(www.reystarwarstrivia.surge.sh)
 # Objectives
 ---
 To correctly identify various Star Wars characters to achieve the level of Jedi Master.
