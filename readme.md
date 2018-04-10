@@ -1,14 +1,14 @@
-# Welcome to Star Wars Character Trivia
+# Welcome to Rey's Star Wars Character Trivia Challenge
 ---
 # Game Preview
 ---
 ![alt text](https://i.imgur.com/MB5ZAQG.png)
 # Play The game
 ---
-(www.reystarwarstrivia.surge.sh)
+www.reystarwarstrivia.surge.sh
 # Objectives
 ---
-To correctly identify various Star Wars characters to achieve the level of Jedi Master.
+To correctly identify various Star Wars characters to achieve the level of Jedi Master. Start as a "Padawan", get 5 correct and level up to a "Jedi in Training", get 10 correct to become a "Jedi Master"!
 
 # Motivation
 ---
@@ -41,15 +41,13 @@ Jose, who is in his 30's and loves watching movies of all genres and has an inte
 ---
 As A User:
 
-  -I should be able to select a difficulty level
+  -I should be able to see an image of a Star Wars character
 
-  -I should be able to see an image
-
-  -I should be able to select an answer from the options given or provide my own
+  -I should be able to select an answer from the options given
 
   -I should be able to see what the correct answer when I'm wrong
 
-  -I should be able to see my progression from Padiwan to Jedi Master
+  -I should be able to see my progression from Padawan to Jedi Master
 
 # Stretch Goals User Stories
 ---
@@ -57,6 +55,12 @@ As A User:
 
   -I should get a visual "congratulations" for a correct answer
 
-  -I should see my score increase for each correct answer
+  -I should see my progress increase for each correct answer
 
-  -I should be able to choose to be a Jedi or Sith
+  -I should be able to hear the Star Wars theme as I play
+
+  -I should see a gif when I answer correctly
+
+  -I should see a git when I get an answer wrong
+
+  -I should be able to tweet others about this game 
