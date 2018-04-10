@@ -15,7 +15,7 @@ const answers = [
   "Darth Maul",
   "R2-D2",
   "Jawa",
-  "Darth Vader",
+  "Darth vader",
   "Luke Skywalker",
   "Boba Fett",
   "C-3P0"
@@ -69,21 +69,26 @@ const loadButtons = function() {
 
 // code to update progress bar and images that coinside with progress
 const checkProgress = function() {
+  let prog = level + "%";
   if (correct == 10) {
-    $('#masterJedi').removeClass("hidden");
+    $('#trainingJedi').addClass("hidden");
+    $('#masterJedi').removeClass("hidden").css("margin-left", "90%");
     $('#myBar').attr("style", "width:100%");
     $('#level').text("jedi master");
     new Audio("audio/jedi-know.mp3").play();
     endGame();
   } else if (correct == 5) {
-    $('#trainingJedi').removeClass("hidden");
+    $('#padawan').addClass("hidden");
+    $('#trainingJedi').removeClass("hidden").css("margin-left", prog);
     $('#level').text("jedi in training");
-    new Audio("audio/forcestrong.mp3").play();
-  } else {
-    let prog = level + "%";
     $('#myBar').attr("style", "width:"+prog);
-    $('#padawan').removeClass("hidden");
-    $('#padawan').attr("style", "marginLeft:"+prog);
+    new Audio("audio/forcestrong.mp3").play();
+  } else if (correct > 5) {
+    $('#trainingJedi').css("margin-left", prog);
+    $('#myBar').attr("style", "width:"+prog);
+  }  else {
+    $('#myBar').attr("style", "width:"+prog);
+    $('#padawan').css("margin-left", prog);
   }
   checkEndGame();
 }
@@ -189,26 +194,18 @@ const wrongAnswer = function() {
 
 // code to execute on game start "Press To Start" button click
 $('#startGame').on('click', function(e) {
-  playTheme();
-  // $('#description').hide();
+  $('#description').hide();
   // $('#hellothere').removeClass("hidden");
   $('#startGame').addClass("hidden");
   $('#contTraining').removeClass("hidden");
+  $('#padawan').removeClass("hidden");
   loadButtons();
   })
 
 const playTheme = function() {
-  var startTime = 1;
-  var endTime = 30;
   let theme = new Audio("audio/starwarstheme.mp3");
   theme.play();
-  theme.volume=.2;
-  theme.addEventListener("canplay", function() {
-      audio.currentTime = startTime;
-  });
-  setInterval(function(){
-      if(theme.currentTime > endTime) {
-          theme.currentTime = startTime;
-      }
-  }, 1000);
+  theme.volume=.1;
 }
+
+playTheme();
