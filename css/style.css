@@ -1,7 +1,9 @@
 body {
   background-image: url("https://i.imgur.com/ciPJv6g.png");
   font-family: "starjedi";
-  /* background-image:url("https://media.giphy.com/media/xUPGcfzaX9hFFQJYre/giphy.gif"); */
+  /* background-image:url("https://media.giphy.com/media/xUPGcfzaX9hFFQJYre/giphy.gif");
+  background-repeat: no-repeat;
+  background-position: center; */
 }
 h1 {
   color: yellow;
@@ -72,6 +74,7 @@ p {
   text-align: center;
   line-height: 10px;
   font-family: "starjedi";
+  color: white;
   border-radius: 25%;
   border-width: 5px;
   border-color: yellow;

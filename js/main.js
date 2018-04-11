@@ -189,7 +189,7 @@ const wrongAnswer = function() {
   $('#hellothere').addClass("hidden");
   $('#yodadance').addClass("hidden");
   $('#failure').removeClass("hidden");
-  new Audio("audio/muchfear.mp3").play();
+  new Audio("audio/Muchfear.mp3").play();
 }
 
 // code to execute on game start "Press To Start" button click
