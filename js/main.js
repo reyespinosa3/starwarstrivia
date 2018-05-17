@@ -40,30 +40,30 @@ const charPics = [
 // global variables
 let i=0;
 let count=4;
-let aOne = $('#answer1');
-let aTwo = $('#answer2');
-let aThree = $('#answer3');
+let answerOne = $('#answer1');
+let answerTwo = $('#answer2');
+let answerThree = $('#answer3');
 let correct = 0;
 let level = 0;
 
 // code to execute at end of the game
 const endGame = function() {
-    $('#starwarscharacter').addClass("hidden");
-    $('#yodadance').addClass("hidden");
-    $('#failure').addClass("hidden");
-    $('#darthdance').removeClass("hidden");
-    $('#who').text("You Are A Jedi Master!");
-    $(aOne).addClass("hidden");
-    $(aTwo).addClass("hidden");
-    $(aThree).addClass("hidden");
+  $('#starwarscharacter').addClass("hidden");
+  $('#yodadance').addClass("hidden");
+  $('#failure').addClass("hidden");
+  $('#darthdance').removeClass("hidden");
+  $('#who').text("You Are A Jedi Master!");
+  $(answerOne).addClass("hidden");
+  $(answerTwo).addClass("hidden");
+  $(answerThree).addClass("hidden");
 }
 
 // code to execute to show current answer buttons
 const loadButtons = function() {
   $('#starwarscharacter').attr("src", charPics[i]);
-  $(aOne).removeClass("hidden");
-  $(aTwo).removeClass("hidden");
-  $(aThree).removeClass("hidden");
+  $(answerOne).removeClass("hidden");
+  $(answerTwo).removeClass("hidden");
+  $(answerThree).removeClass("hidden");
   checkProgress();
 }
 
@@ -107,15 +107,15 @@ console.log(count);
 // code to update buttons to show next set of answers for new
 // character picture
 const updateButtons = function() {
-  $(aOne).addClass("hidden");
-  $(aTwo).addClass("hidden");
-  $(aThree).addClass("hidden");
+  $(answerOne).addClass("hidden");
+  $(answerTwo).addClass("hidden");
+  $(answerThree).addClass("hidden");
   let a = "#answer" + count;
-  aOne = $(a);
+  answerOne = $(a);
   let b = "#answer" + (count + 1);
-  aTwo = $(b);
+  answerTwo = $(b);
   let c = "#answer" + (count + 2);
-  aThree = $(c);
+  answerThree = $(c);
   count +=3;
   loadButtons();
 }
@@ -131,8 +131,8 @@ const nextCharacter = function() {
 // updates progress bar, nubmer of correct answers and correct
 // answer array
 const checkAnswers = function() {
-  $(aOne).on('click', function(e) {
-    if (aOne.text() === answers[i]) {
+  $(answerOne).on('click', function(e) {
+    if (answerOne.text() === answers[i]) {
       i += 1;
       correct++;
       level += 10;
@@ -145,8 +145,8 @@ const checkAnswers = function() {
     }
   });
 
-  $(aTwo).on('click', function(e) {
-    if (aTwo.text() === answers[i]) {
+  $(answerTwo).on('click', function(e) {
+    if (answerTwo.text() === answers[i]) {
       i += 1;
       correct++;
       level += 10;
@@ -159,8 +159,8 @@ const checkAnswers = function() {
     }
   });
 
-  $(aThree).on('click', function(e) {
-    if (aThree.text() === answers[i]) {
+  $(answerThree).on('click', function(e) {
+    if (answerThree.text() === answers[i]) {
       i += 1;
       correct++;
       level += 10;
@@ -195,7 +195,7 @@ const wrongAnswer = function() {
 // code to execute on game start "Press To Start" button click
 $('#startGame').on('click', function(e) {
   $('#description').hide();
-  // $('#hellothere').removeClass("hidden");
+  playTheme();
   $('#startGame').addClass("hidden");
   $('#contTraining').removeClass("hidden");
   $('#padawan').removeClass("hidden");
@@ -207,5 +207,3 @@ const playTheme = function() {
   theme.play();
   theme.volume=.1;
 }
-
-playTheme();

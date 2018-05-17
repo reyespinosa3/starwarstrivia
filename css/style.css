@@ -1,6 +1,6 @@
 body {
   background-image: url("https://i.imgur.com/ciPJv6g.png");
-  font-family: "starjedi";
+  font-family: 'Geostar Fill', cursive;
   /* background-image:url("https://media.giphy.com/media/xUPGcfzaX9hFFQJYre/giphy.gif");
   background-repeat: no-repeat;
   background-position: center; */
@@ -8,20 +8,23 @@ body {
 h1 {
   color: yellow;
   text-align: center;
-  text-shadow: 5px -5px green;
+  text-shadow: 3px -3px green;
   margin-top: 2px;
   margin-bottom: 2px;
+  font-family: 'Geostar Fill', cursive;
 }
 h2 {
   color: yellow;
   text-align: center;
-  text-shadow: 5px -5px green;
+  text-shadow: 3px -3px green;
+  font-family: 'Geostar Fill', cursive;
 }
 p {
   color: yellow;
   text-align: center;
   font-size: 24px;
   margin: 1px 1px;
+  font-family: 'Geostar Fill', cursive;
 }
 
 #images {
@@ -47,14 +50,14 @@ p {
   margin-left: 0%;
 }
 #myProgress {
-  height: 10px;
+  height: 50px;
   background-color: yellow;
   border-style: groove;
 }
 #myBar {
   width: 0%;
   background-color: lightgreen;
-  height: 10px;
+  height: 45px;
 }
 #difficulty {
   height: 25px;
@@ -67,13 +70,13 @@ p {
   justify-content: center;
 }
 #startGame, #contTraining {
-  width: 75%;
+  width: 25%;
   margin: auto;
   font-size: 20px;
   height: 30px;
   text-align: center;
   line-height: 10px;
-  font-family: "starjedi";
+  font-family: 'Geostar Fill', cursive;
   color: white;
   border-radius: 25%;
   border-width: 5px;
@@ -90,7 +93,7 @@ p {
   font-size: 20px;
   display: list-item;
   margin: auto;
-  font-family: "starjedi";
+  font-family: 'Geostar Fill', cursive;
   border-radius: 25%;
   border-width: 5px;
   border-color: yellow;
@@ -102,7 +105,7 @@ p {
 }
 #starwarscharacter {
   height: 150px;
-  width: 150px;
+  width: 200px;
 }
 #buttons {
   height: 90px;

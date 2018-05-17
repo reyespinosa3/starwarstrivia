@@ -2,7 +2,7 @@
 ---
 # Game Preview
 ---
-![alt text](https://i.imgur.com/MB5ZAQG.png)
+![alt text](https://i.imgur.com/ZXynU44.png)
 # Play The game
 ---
 www.reystarwarstrivia.surge.sh
@@ -63,4 +63,4 @@ As A User:
 
   -I should see a git when I get an answer wrong
 
-  -I should be able to tweet others about this game 
+  -I should be able to tweet others about this game
